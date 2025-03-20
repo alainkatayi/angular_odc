@@ -16,6 +16,7 @@ export class ListArticleComponent {
   ngOnInit() {
     this.articles=[
     {
+      id:1,
       title:'Mon premier article',
     content :'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel odio nec nunc ultricies ultricies. Nulla facilisi. Sed nec nunc nec eros',
       auteur :'Jean Dupont',
@@ -25,7 +26,9 @@ export class ListArticleComponent {
       categorie :['Angular','Javascript','Typescript'],
     },
     {
-      title:'Mon premier article',
+
+      id:2,
+    title:'Mon premier article',
     content :'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel odio nec nunc ultricies ultricies. Nulla facilisi. Sed nec nunc nec eros',
       auteur :'Jean Dupont',
       photo :'https://picsum.photos/200/300',
