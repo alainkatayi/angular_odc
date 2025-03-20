@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { ArticleComponent } from './Composant/article/article.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { HeaderComponent } from './Composant/header/header.component';
+import { SingleComponent } from './Composant/single/single.component';
 
 
 export const routes: Routes = [
@@ -15,6 +16,13 @@ export const routes: Routes = [
     {
         path :'categories',
         component:CategoriesComponent,
+        title:'article'
+    },
+
+
+    {
+        path :'article/:id',
+        component:SingleComponent,
         title:'article'
     },
 
