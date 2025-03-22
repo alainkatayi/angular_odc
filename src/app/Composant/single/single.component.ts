@@ -5,7 +5,7 @@ import { ArticleService } from '../../services/article.service';
 
 @Component({
   selector: 'app-single',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './single.component.html',
   styleUrl: './single.component.css'
 })

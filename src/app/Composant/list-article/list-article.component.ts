@@ -15,8 +15,13 @@ import { error } from 'console';
 })
 export class ListArticleComponent implements OnInit {
 
+  //creatiion d'une variable de type article(model), qui son pour l'instant nul(d'ou l'importance du point d'exclamation)
   articles!:Article[];
+
+  //creation d'une variable du type articleservice(l'interface) et qui inject cette derniere, donc elle a maintenant access aux variables et aux methode de ce dernier
   articleService:ArticleService=inject(ArticleService);
+
+  //creation d'une variable data qui attand les informations de l'api laravel
   data:any[] = [];
 
   constructor(private apiService: ApiService){
@@ -24,7 +29,11 @@ export class ListArticleComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //cette variable prend la valeur de articleservice et utilise conserve les donnes renvoyer par la methode getAll du service
     this.articles=this.articleService.getAll();
+    
+
+    //cette variable stocke les donnees renvoyer par la methode getData du apiservice
     this.apiService.getData().subscribe(
       (response)=>{
         this.data = response;

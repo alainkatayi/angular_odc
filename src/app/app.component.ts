@@ -13,5 +13,7 @@ import { ArticleApiComponent } from './Composant/article-api/article-api.compone
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
+  //definition du titre de notre application
   title = 'blog';
 }

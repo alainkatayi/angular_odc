@@ -1,3 +1,5 @@
+//service article pour rendre tout les article creer accessible partout dans l'application
+
 import { Injectable } from '@angular/core';
 import { Article } from '../models/article';
 import { response } from 'express';
@@ -6,6 +8,8 @@ import { response } from 'express';
   providedIn: 'root'
 })
 export class ArticleService {
+
+  //definition d'une variable de type article, article qui est le model de notre application
 
   articles:Article[]=[
     
@@ -41,13 +45,19 @@ export class ArticleService {
       },
   ];
 
+
+  //methode qui renvoi renvoi tous les contenus de la variable articles
   getAll(){
     return this.articles
   }
+
+  //methode qui renvoi un seul  article selon son id
   getOne(id:number){
     const arti = this.articles.find((article)=>article.id===id)
     return arti;
   }
+
+  //aucune importnace
   findAll():Promise<Article[]>{
     let data = fetch('http://127.0.0.1:8000/api/publications').then(response => response.json())
     return data

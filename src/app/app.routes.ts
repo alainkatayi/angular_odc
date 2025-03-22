@@ -7,6 +7,7 @@ import { HeaderComponent } from './Composant/header/header.component';
 import { SingleComponent } from './Composant/single/single.component';
 
 
+//definition des diffenrentes route
 export const routes: Routes = [
     {
         path :'',
