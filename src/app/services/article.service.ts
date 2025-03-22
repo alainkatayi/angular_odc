@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Article } from '../models/article';
+import { response } from 'express';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,11 @@ export class ArticleService {
     const arti = this.articles.find((article)=>article.id===id)
     return arti;
   }
+  findAll():Promise<Article[]>{
+    let data = fetch('http://127.0.0.1:8000/api/publications').then(response => response.json())
+    return data
+  }
+
 
 
 }

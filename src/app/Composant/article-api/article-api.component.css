@@ -1,0 +1,3 @@
+{{article.nb_comment}}
+
+<p> <b> {{article.categorie}} </b> | <b> {{article.categorie[2]}} </b></p>

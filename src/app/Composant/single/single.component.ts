@@ -14,7 +14,7 @@ export class SingleComponent {
   article!:Article|undefined;
   articleService:ArticleService=inject(ArticleService);
   articleId = -1;
-
+  
 
   ngOnInit() {
     this.articleId = Number(this.route.snapshot.paramMap.get('id'));

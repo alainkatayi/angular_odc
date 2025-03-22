@@ -3,6 +3,9 @@ import { ArticleComponent } from '../article/article.component';
 import { Article } from '../../models/article';
 import { NgFor } from '@angular/common';
 import { ArticleService } from '../../services/article.service';
+import { ApiService } from '../../services/api.service';
+import { response } from 'express';
+import { error } from 'console';
 
 @Component({
   selector: 'app-list-article',
@@ -14,9 +17,23 @@ export class ListArticleComponent implements OnInit {
 
   articles!:Article[];
   articleService:ArticleService=inject(ArticleService);
+  data:any[] = [];
+
+  constructor(private apiService: ApiService){
+
+  }
 
   ngOnInit(): void {
     this.articles=this.articleService.getAll();
+    this.apiService.getData().subscribe(
+      (response)=>{
+        this.data = response;
+        console.log(this.data)
+      },
+      (error) =>{
+        console.log("erreur",error)
+      }
+    )
   }
 
 
